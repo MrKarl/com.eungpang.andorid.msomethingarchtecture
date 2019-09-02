@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mvvp2.MVVP2Activity">
+
+    <data>
+        <variable name="mvvpViewModel" type="com.eungpang.andorid.msomethingarchtecture.viewmodel.MVVPViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        <!-- 초기값 0 -->
+        <TextView
+                android:id="@+id/tv"
+                android:text="@{Integer.toString(mvvpViewModel.appCount.count)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+
+        <!-- btn을 누르면, tv값이 올라갑니다. -->
+        <Button
+                android:id="@+id/btn"
+                android:onClick="@{() -> mvvpViewModel.increaseAppCount()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+
+    </LinearLayout>
+
+</layout>
